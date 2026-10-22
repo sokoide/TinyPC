@@ -1,5 +1,6 @@
 NASM ?= nasm
 QEMU ?= qemu-system-i386
+QEMU_DISPLAY ?= $(shell if [ "$$(uname -s)" = Darwin ]; then echo "-display cocoa,zoom-to-fit=on"; fi)
 
 .PHONY: all disk run clean
 all: disk
@@ -17,7 +18,7 @@ disk: boot.bin stage2.bin
 	dd if=stage2.bin of=disk.img bs=512 seek=1 conv=notrunc
 
 run: disk
-	$(QEMU) -drive format=raw,file=disk.img,if=floppy
+	$(QEMU) $(QEMU_DISPLAY) -drive format=raw,file=disk.img,if=floppy
 
 clean:
 	rm -f boot.bin stage2.bin disk.img

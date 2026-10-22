@@ -79,6 +79,12 @@ dd if=boot.bin of=disk.img conv=notrunc
 qemu-system-i386 -boot a -drive format=raw,file=disk.img,if=floppy
 ```
 
+macOSでは、QEMUの起動コマンドに`-display cocoa,zoom-to-fit=on`を追加すると、ウィンドウを広げたときに表示も拡大する。
+
+```sh
+qemu-system-i386 -display cocoa,zoom-to-fit=on -boot a -drive format=raw,file=disk.img,if=floppy
+```
+
 QEMUの画面に`Booting...`が表示されれば成功。OSを起動していないため、文字列表示後は停止する。QEMUのウィンドウを閉じて終了する。
 
 ### 5分の演習：自分の文字列を表示する

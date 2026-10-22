@@ -79,6 +79,12 @@ dd if=boot.bin of=disk.img conv=notrunc
 qemu-system-i386 -boot a -drive format=raw,file=disk.img,if=floppy
 ```
 
+On macOS, add `-display cocoa,zoom-to-fit=on` to the QEMU command to scale the display when you resize the window:
+
+```sh
+qemu-system-i386 -display cocoa,zoom-to-fit=on -boot a -drive format=raw,file=disk.img,if=floppy
+```
+
 Success: `Booting...` appears in the QEMU window. The program stops after printing because it does not start an operating system. Close the QEMU window to exit.
 
 ### Five-minute exercise: display your own message
