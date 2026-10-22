@@ -1,5 +1,5 @@
 ---
-title: TinyPC Lite: Boot Sector and Hello World
+title: "TinyPC Lite: Boot Sector and Hello World"
 type: chapter
 topic: 情報・コンピュータ
 collection: TinyPC Lite
