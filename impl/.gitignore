@@ -1,0 +1,7 @@
+*.bin
+*.img
+*.o
+*.lst
+*.map
+__pycache__/
+transcripts/
